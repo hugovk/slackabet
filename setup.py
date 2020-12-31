@@ -33,7 +33,6 @@ setup(
     zip_safe=True,
     use_scm_version={"local_scheme": local_scheme},
     setup_requires=["setuptools_scm"],
-    install_requires=["pyperclip"],
     extras_require={"tests": ["hypothesis-auto", "pytest", "pytest-cov"]},
     python_requires=">=3.6",
     project_urls={
