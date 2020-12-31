@@ -4,8 +4,6 @@ CLI for slackabet
 """
 import argparse
 
-import pyperclip
-
 import slackabet
 
 
@@ -30,10 +28,7 @@ def main():
     elif args.random:
         colour = "random"
 
-    text = slackabet.slackabet(args.text, colour)
-    print(text)
-    pyperclip.copy(text)
-    print("Copied!")
+    print(slackabet.slackabet(args.text, colour))
 
 
 if __name__ == "__main__":
