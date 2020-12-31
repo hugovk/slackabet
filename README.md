@@ -31,7 +31,6 @@ Or on the command line:
 ```console
 $ slackabet hi
 :alphabet-None-h::alphabet-None-i:
-Copied!
 ```
 
 And that's it!
