@@ -31,6 +31,3 @@ def slackabet(text: str, colour: str = "white") -> str:
             new += c
 
     return new
-
-
-# End of file

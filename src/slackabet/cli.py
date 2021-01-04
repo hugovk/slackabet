@@ -6,6 +6,11 @@ import argparse
 
 import slackabet
 
+try:
+    import pyperclip
+except ImportError:
+    pyperclip = None
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -18,6 +23,9 @@ def main():
     parser.add_argument(
         "-r", "--random", action="store_true", help="Randomly coloured letters"
     )
+    parser.add_argument(
+        "--no-copy", action="store_true", help="Do not copy to clipboard"
+    )
     args = parser.parse_args()
 
     colour = "white"
@@ -28,7 +36,11 @@ def main():
     elif args.random:
         colour = "random"
 
-    print(slackabet.slackabet(args.text, colour))
+    out = slackabet.slackabet(args.text, colour)
+    print(out)
+    if pyperclip and not args.no_copy:
+        pyperclip.copy(out)
+        print("Copied!")
 
 
 if __name__ == "__main__":
