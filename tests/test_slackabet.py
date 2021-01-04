@@ -1,11 +1,10 @@
+import pytest
 from hypothesis_auto import auto_pytest_magic
 
 import slackabet
 
 
-def test_something():
-    # Arrange
-
+def test_slackabet_default():
     # Act
     text = slackabet.slackabet("123ABCabc@!#?")
 
@@ -21,22 +20,28 @@ def test_something():
     )
 
 
-def test_something_else():
-    # Arrange
-
+@pytest.mark.parametrize(
+    ("test_colour", "expected"),
+    [
+        ("yellow", ":alphabet-yellow-A:"),
+        ("white", ":alphabet-white-A:"),
+    ],
+)
+def test_slackabet_colour(test_colour: str, expected: str):
     # Act
-    text = slackabet.slackabet("123ABCabc@!#?", colour="yellow")
+    text = slackabet.slackabet("A", colour=test_colour)
 
     # Assert
-    assert (
-        text == "123"
-        ":alphabet-yellow-A::alphabet-yellow-B::alphabet-yellow-C:"
-        ":alphabet-yellow-a::alphabet-yellow-b::alphabet-yellow-c:"
-        ":alphabet-yellow-at:"
-        ":alphabet-yellow-exclamation:"
-        ":alphabet-yellow-hash:"
-        ":alphabet-yellow-question:"
-    )
+    assert text == expected
+
+
+def test_slackabet_random():
+    # Act
+    text = slackabet.slackabet("A", colour="random")
+
+    # Assert
+    assert ":alphabet-" in text
+    assert "-A:" in text
 
 
 auto_pytest_magic(slackabet.slackabet)
