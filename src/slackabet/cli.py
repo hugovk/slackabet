@@ -14,7 +14,7 @@ except ImportError:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("text", help="Text to convert to emoji")
+    parser.add_argument("text", nargs="+", help="Text to convert to emoji")
     parser.add_argument(
         "-V", "--version", action="version", version=f"%(prog)s {slackabet.__version__}"
     )
@@ -27,6 +27,7 @@ def main():
         "--no-copy", action="store_true", help="Do not copy to clipboard"
     )
     args = parser.parse_args()
+    args.text = " ".join(args.text)
 
     colour = "white"
     if args.white:
