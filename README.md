@@ -38,7 +38,7 @@ And that's it!
 
 ```console
 $ slackabet --help
-usage: slackabet [-h] [-V] [-w] [-y] [-r] text
+usage: slackabet [-h] [-V] [-w] [-y] [-r] [--no-copy] text [text ...]
 
 positional arguments:
   text           Text to convert to emoji
@@ -49,4 +49,5 @@ optional arguments:
   -w, --white    White alphabet
   -y, --yellow   Yellow alphabet
   -r, --random   Randomly coloured letters
+  --no-copy      Do not copy to clipboard
 ```
