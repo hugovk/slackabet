@@ -10,6 +10,20 @@ COLOURS = ["white", "yellow"]
 
 def slackabet(text: str, colour: str = "white") -> str:
     """Convert your text into alphabet emoji"""
+
+    if colour == "words":
+        words = text.split()
+        converted = []
+        for i, word in enumerate(words):
+            if i % 2 == 0:
+                colour = "white"
+            else:
+                colour = "yellow"
+            colour = "white" if i % 2 == 0 else "yellow"
+
+            converted.append(slackabet(word, colour))
+        return " ".join(converted)
+
     new = ""
     prefix = f"alphabet-{colour}"
     for c in text:

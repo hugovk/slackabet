@@ -23,6 +23,7 @@ def main():
     parser.add_argument(
         "-r", "--random", action="store_true", help="Randomly coloured letters"
     )
+    parser.add_argument("--words", action="store_true", help="Randomly coloured words")
     parser.add_argument(
         "--no-copy", action="store_true", help="Do not copy to clipboard"
     )
@@ -36,6 +37,8 @@ def main():
         colour = "yellow"
     elif args.random:
         colour = "random"
+    elif args.words:
+        colour = "words"
 
     out = slackabet.slackabet(args.text, colour)
     print(out)
