@@ -44,4 +44,16 @@ def test_slackabet_random():
     assert "-A:" in text
 
 
+def test_slackabet_words():
+    # Act
+    text = slackabet.slackabet("hello there", colour="words")
+
+    # Assert
+    words = text.split()
+    assert "alphabet-white-" in words[0]
+    assert "alphabet-yellow-" in words[1]
+    assert "alphabet-yellow-" not in words[0]
+    assert "alphabet-white-" not in words[1]
+
+
 auto_pytest_magic(slackabet.slackabet)
