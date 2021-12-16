@@ -35,7 +35,7 @@ setup(
     setup_requires=["setuptools_scm"],
     install_requires=['pyperclip; platform_system != "Linux"'],
     extras_require={"tests": ["hypothesis-auto", "pytest", "pytest-cov"]},
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     project_urls={
         "Source": "https://github.com/hugovk/slackabet",
     },
@@ -45,7 +45,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
