@@ -7,10 +7,11 @@ on:
   release:
     types:
       - published
+  workflow_dispatch:
 
 jobs:
-  build:
-    if: github.repository == 'hugovk/slackabet'
+  deploy:
+    if: github.repository_owner == 'hugovk'
     runs-on: ubuntu-20.04
 
     steps:
