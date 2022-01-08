@@ -1,8 +1,13 @@
 import random
 
-import pkg_resources
+try:
+    # Python 3.8+
+    import importlib.metadata as importlib_metadata
+except ImportError:
+    # Python 3.7 and lower
+    import importlib_metadata  # type: ignore
 
-__version__: str = pkg_resources.get_distribution(__name__).version
+__version__: str = importlib_metadata.version(__name__)
 
 
 COLOURS = ["white", "yellow"]
