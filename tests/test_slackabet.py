@@ -1,10 +1,10 @@
 import pytest
-from hypothesis_auto import auto_pytest_magic
+from hypothesis_auto import auto_pytest_magic  # type: ignore[import]
 
 import slackabet
 
 
-def test_slackabet_default():
+def test_slackabet_default() -> None:
     # Act
     text = slackabet.slackabet("123ABCabc@!#?")
 
@@ -27,7 +27,7 @@ def test_slackabet_default():
         ("white", ":alphabet-white-A:"),
     ],
 )
-def test_slackabet_colour(test_colour: str, expected: str):
+def test_slackabet_colour(test_colour: str, expected: str) -> None:
     # Act
     text = slackabet.slackabet("A", colour=test_colour)
 
@@ -35,7 +35,7 @@ def test_slackabet_colour(test_colour: str, expected: str):
     assert text == expected
 
 
-def test_slackabet_random():
+def test_slackabet_random() -> None:
     # Act
     text = slackabet.slackabet("A", colour="random")
 
@@ -44,7 +44,7 @@ def test_slackabet_random():
     assert "-A:" in text
 
 
-def test_slackabet_words():
+def test_slackabet_words() -> None:
     # Act
     text = slackabet.slackabet("hello there", colour="words")
 

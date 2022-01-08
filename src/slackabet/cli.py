@@ -7,12 +7,12 @@ import argparse
 import slackabet
 
 try:
-    import pyperclip
+    import pyperclip  # type: ignore
 except ImportError:
     pyperclip = None
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("text", nargs="+", help="Text to convert to emoji")
     parser.add_argument(
