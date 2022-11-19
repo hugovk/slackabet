@@ -1,5 +1,74 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = [
+  "hatch-vcs",
+  "hatchling",
+]
+
+[project]
+name = "slackabet"
+description = "Convert text into Slack alphabet emoji"
+readme = "README.md"
+keywords = [
+  "alphabet",
+  "CLI",
+  "convert",
+  "converter",
+  "emoji",
+  "Slack",
+  "text",
+]
+license = {text = "MIT"}
+authors = [{name = "Hugo van Kemenade"}]
+requires-python = ">=3.7"
+dependencies = [
+  'importlib-metadata; python_version < "3.8"',
+  'pyperclip; platform_system != "Linux"',
+]
+dynamic = [
+  "version",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Artistic Software",
+    "Topic :: Text Processing",
+]
+[project.optional-dependencies]
+tests = [
+  "hypothesis-auto",
+  "pytest",
+  "pytest-cov",
+]
+
+[project.urls]
+Changelog = "https://github.com/hugovk/slackabet/releases"
+Homepage = "https://github.com/hugovk/slackabet"
+Source = "https://github.com/hugovk/slackabet"
+
+[project.scripts]
+slackabet = "slackabet.cli:main"
+
+
 [tool.black]
 target_version = ["py37"]
+
+[tool.hatch]
+version.source = "vcs"
+
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"
 
 [tool.isort]
 profile = "black"
