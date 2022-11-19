@@ -30,6 +30,8 @@ Or on the command line:
 ```console
 $ slackabet hi
 :alphabet-None-h::alphabet-None-i:
+$ sb hi
+:alphabet-None-h::alphabet-None-i:
 ```
 
 And that's it!
