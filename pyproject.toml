@@ -58,6 +58,7 @@ Homepage = "https://github.com/hugovk/slackabet"
 Source = "https://github.com/hugovk/slackabet"
 
 [project.scripts]
+sb = "slackabet.cli:main"
 slackabet = "slackabet.cli:main"
 
 
