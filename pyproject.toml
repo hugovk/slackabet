@@ -47,7 +47,6 @@ classifiers = [
 ]
 [project.optional-dependencies]
 tests = [
-  "hypothesis-auto",
   "pytest",
   "pytest-cov",
 ]

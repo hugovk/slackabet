@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import pytest
-from hypothesis_auto import auto_pytest_magic  # type: ignore[import]
 
 import slackabet
 
@@ -56,6 +55,3 @@ def test_slackabet_words() -> None:
     assert "alphabet-yellow-" in words[1]
     assert "alphabet-yellow-" not in words[0]
     assert "alphabet-white-" not in words[1]
-
-
-auto_pytest_magic(slackabet.slackabet)
