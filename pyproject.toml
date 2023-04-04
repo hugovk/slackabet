@@ -21,13 +21,6 @@ keywords = [
 license = {text = "MIT"}
 authors = [{name = "Hugo van Kemenade"}]
 requires-python = ">=3.7"
-dependencies = [
-  'importlib-metadata; python_version < "3.8"',
-  'pyperclip; platform_system != "Linux"',
-]
-dynamic = [
-  "version",
-]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -45,30 +38,34 @@ classifiers = [
     "Topic :: Artistic Software",
     "Topic :: Text Processing",
 ]
+dynamic = [
+  "version",
+]
+dependencies = [
+  'importlib-metadata; python_version < "3.8"',
+  'pyperclip; platform_system != "Linux"',
+]
 [project.optional-dependencies]
 tests = [
   "pytest",
   "pytest-cov",
 ]
-
 [project.urls]
 Changelog = "https://github.com/hugovk/slackabet/releases"
 Homepage = "https://github.com/hugovk/slackabet"
 Source = "https://github.com/hugovk/slackabet"
-
 [project.scripts]
 sb = "slackabet.cli:main"
 slackabet = "slackabet.cli:main"
-
-
-[tool.black]
-target_version = ["py37"]
 
 [tool.hatch]
 version.source = "vcs"
 
 [tool.hatch.version.raw-options]
 local_scheme = "no-local-version"
+
+[tool.black]
+target_version = ["py37"]
 
 [tool.isort]
 profile = "black"

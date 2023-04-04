@@ -34,7 +34,6 @@ def slackabet(text: str, colour: str = "white") -> str:
     new = ""
     prefix = f"alphabet-{colour}"
     for c in text:
-
         if colour == "random":
             prefix = f"alphabet-{random.choice(COLOURS)}"
 
