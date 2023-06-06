@@ -1,15 +1,9 @@
 from __future__ import annotations
 
+import importlib.metadata
 import random
 
-try:
-    # Python 3.8+
-    import importlib.metadata as importlib_metadata
-except ImportError:
-    # Python 3.7 and lower
-    import importlib_metadata  # type: ignore
-
-__version__: str = importlib_metadata.version(__name__)
+__version__: str = importlib.metadata.version(__name__)
 
 
 COLOURS = ["white", "yellow"]
@@ -22,10 +16,6 @@ def slackabet(text: str, colour: str = "white") -> str:
         words = text.split()
         converted = []
         for i, word in enumerate(words):
-            if i % 2 == 0:
-                colour = "white"
-            else:
-                colour = "yellow"
             colour = "white" if i % 2 == 0 else "yellow"
 
             converted.append(slackabet(word, colour))
