@@ -1,10 +1,12 @@
 from __future__ import annotations
 
-import importlib.metadata
 import random
 
-__version__: str = importlib.metadata.version(__name__)
+from slackabet import _version
 
+__version__ = _version.__version__
+
+__all__ = ["__version__"]
 
 COLOURS = ["white", "yellow"]
 

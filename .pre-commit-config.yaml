@@ -21,6 +21,7 @@ repos:
       - id: debug-statements
       - id: end-of-file-fixer
       - id: forbid-submodules
+      - id: requirements-txt-fixer
       - id: trailing-whitespace
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
@@ -32,13 +33,6 @@ repos:
     rev: v1.7.6
     hooks:
       - id: actionlint
-
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.14.1
-    hooks:
-      - id: mypy
-        additional_dependencies: [pytest==7.3.1]
-        args: [--strict, --pretty, --show-error-codes]
 
   - repo: https://github.com/tox-dev/pyproject-fmt
     rev: v2.5.0
