@@ -9,7 +9,7 @@ import argparse
 import slackabet
 
 try:
-    import pyperclip  # type: ignore
+    import pyperclip  # type: ignore[import-not-found]
 except ImportError:
     pyperclip = None
 
