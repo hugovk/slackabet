@@ -2,16 +2,18 @@ name: Lint
 
 on: [push, pull_request, workflow_dispatch]
 
-permissions:
-  contents: read
+env:
+  FORCE_COLOR: 1
 
 jobs:
   lint:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - uses: pre-commit/action@v3.0.0
+      - uses: pre-commit/action@v3.0.1
