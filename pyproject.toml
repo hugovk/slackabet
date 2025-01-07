@@ -19,30 +19,26 @@ keywords = [
   "text",
 ]
 license = { text = "MIT" }
-authors = [
-  { name = "Hugo van Kemenade" },
-]
-requires-python = ">=3.8"
+authors = [ { name = "Hugo van Kemenade" } ]
+requires-python = ">=3.9"
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
   "Natural Language :: English",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
   "Topic :: Artistic Software",
   "Topic :: Text Processing",
 ]
-dynamic = [
-  "version",
-]
+dynamic = [ "version" ]
 dependencies = [
   "pyperclip; platform_system!='Linux'",
 ]
@@ -64,3 +60,6 @@ local_scheme = "no-local-version"
 
 [tool.isort]
 profile = "black"
+
+[tool.pyproject-fmt]
+max_supported_python = "3.14"
