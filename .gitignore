@@ -64,3 +64,6 @@ node_modules/
 
 # pyenv
 .python-version
+
+# hatch-vcs
+src/*/_version.py
