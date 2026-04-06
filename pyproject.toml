@@ -43,7 +43,7 @@ dependencies = [
   "pyperclip; platform_system!='Linux'",
 ]
 optional-dependencies.tests = [
-  "pytest",
+  "pytest>=9",
   "pytest-cov",
 ]
 urls.Changelog = "https://github.com/hugovk/slackabet/releases"
@@ -54,16 +54,11 @@ scripts.slackabet = "slackabet.cli:main"
 
 [tool.hatch]
 version.source = "vcs"
-
-[tool.hatch.build.hooks.vcs]
-version-file = "src/slackabet/_version.py"
-
-[tool.hatch.version.raw-options]
-local_scheme = "no-local-version"
+version.raw-options.local_scheme = "no-local-version"
+build.hooks.vcs.version-file = "src/slackabet/_version.py"
 
 [tool.ruff]
 fix = true
-
 lint.select = [
   "C4",     # flake8-comprehensions
   "E",      # pycodestyle errors
@@ -96,10 +91,11 @@ lint.isort.required-imports = [ "from __future__ import annotations" ]
 [tool.pyproject-fmt]
 max_supported_python = "3.15"
 
-[tool.pytest.ini_options]
-addopts = "--color=yes"
+[tool.pytest]
+minversion = "9.0"
+addopts = [ "--color=yes" ]
+testpaths = [ "tests" ]
 filterwarnings = [
   # Python <= 3.11
   "ignore:sys.monitoring isn't available, using default core:coverage.exceptions.CoverageWarning",
 ]
-testpaths = [ "tests" ]
