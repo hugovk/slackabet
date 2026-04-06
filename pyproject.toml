@@ -54,16 +54,11 @@ scripts.slackabet = "slackabet.cli:main"
 
 [tool.hatch]
 version.source = "vcs"
-
-[tool.hatch.build.hooks.vcs]
-version-file = "src/slackabet/_version.py"
-
-[tool.hatch.version.raw-options]
-local_scheme = "no-local-version"
+version.raw-options.local_scheme = "no-local-version"
+build.hooks.vcs.version-file = "src/slackabet/_version.py"
 
 [tool.ruff]
 fix = true
-
 lint.select = [
   "C4",     # flake8-comprehensions
   "E",      # pycodestyle errors
@@ -96,10 +91,10 @@ lint.isort.required-imports = [ "from __future__ import annotations" ]
 [tool.pyproject-fmt]
 max_supported_python = "3.15"
 
-[tool.pytest.ini_options]
-addopts = "--color=yes"
-filterwarnings = [
+[tool.pytest]
+ini_options.addopts = "--color=yes"
+ini_options.filterwarnings = [
   # Python <= 3.11
   "ignore:sys.monitoring isn't available, using default core:coverage.exceptions.CoverageWarning",
 ]
-testpaths = [ "tests" ]
+ini_options.testpaths = [ "tests" ]
