@@ -92,10 +92,10 @@ lint.isort.required-imports = [ "from __future__ import annotations" ]
 max_supported_python = "3.15"
 
 [tool.pytest]
-minversion = "9.0"
 addopts = [ "--color=yes" ]
-testpaths = [ "tests" ]
 filterwarnings = [
   # Python <= 3.11
   "ignore:sys.monitoring isn't available, using default core:coverage.exceptions.CoverageWarning",
 ]
+minversion = "9.0"
+testpaths = [ "tests" ]
